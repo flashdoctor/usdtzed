@@ -2,7 +2,7 @@
 <html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
  <head>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-  <meta content="width=1700" id="siteViewport" name="viewport"/>
+  <meta content="width=device-width, initial-scale=1" id="siteViewport" name="viewport"/>
   <link href="xfn/11/index.html" rel="profile"/>
   <title>
    USDTzed 2.0 - USDT.z
@@ -152,10 +152,12 @@ var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":
     if (screen.width >= 1535 && screen.width < 2561) { 
         let mvp = document.getElementById('siteViewport');
         mvp.setAttribute('content','width=1920');
-    }
-    if (screen.width > 767 && screen.width < 1535) {
+    } else if (screen.width > 767 && screen.width < 1535) {
         let mvp = document.getElementById('siteViewport');
         mvp.setAttribute('content','width=1700');
+    } else {
+        let mvp = document.getElementById('siteViewport');
+        mvp.setAttribute('content','width=device-width, initial-scale=1');
     }
     
 /* ]]> */
