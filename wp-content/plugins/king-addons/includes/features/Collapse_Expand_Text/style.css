@@ -1,0 +1,132 @@
+/**
+ * Collapse & Expand Text Feature Styles
+ * King Addons for Elementor
+ */
+
+/* Base styles for collapse/expand functionality */
+.kng-collapse-expand-yes {
+    position: relative;
+}
+
+/* Content wrapper styles */
+.kng-collapse-expand-content {
+    position: relative;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.kng-collapse-expand-content.collapsed {
+    max-height: 80px; /* Default collapsed height */
+}
+
+.kng-collapse-expand-content.expanded {
+    max-height: none;
+}
+
+/* Fade effect for collapsed content */
+/* .kng-collapse-expand-content.collapsed::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1.6em;
+    background: linear-gradient(transparent, var(--e-global-color-background, #ffffff));
+    pointer-events: none;
+} */
+
+/* Button wrapper styles */
+.kng-collapse-expand-button-wrapper {
+    margin-top: 10px;
+    text-align: right; /* Default position */
+}
+
+/* Button styles */
+.kng-collapse-expand-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007cba;
+    text-decoration: underline;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+    outline: none;
+}
+
+.kng-collapse-expand-button:hover {
+    color: #005a87;
+}
+
+.kng-collapse-expand-button:focus {
+    outline: none !important;
+    outline-offset: 0px !important;
+}
+
+.kng-collapse-expand-button:active {
+    transform: translateY(1px);
+}
+
+/* Animation enhancements */
+.kng-collapse-expand-content {
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .kng-collapse-expand-content {
+        transition: none;
+    }
+    
+    .kng-collapse-expand-button {
+        transition: none;
+    }
+}
+
+/* Dark theme support */
+/* @media (prefers-color-scheme: dark) {
+    .kng-collapse-expand-content.collapsed::after {
+        background: linear-gradient(transparent, var(--e-global-color-background, #1a1a1a));
+    }
+} */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .kng-collapse-expand-button {
+        font-size: 13px;
+        padding: 8px 0;
+    }
+    
+    .kng-collapse-expand-button-wrapper {
+        margin-top: 8px;
+    }
+}
+
+/* Integration with Elementor text widgets */
+.elementor-widget-text .kng-collapse-expand-content,
+.elementor-widget-heading .kng-collapse-expand-content {
+    line-height: inherit;
+}
+
+/* Integration with King Addons Styled Text Builder */
+.elementor-widget-king-addons-styled-text-builder .kng-collapse-expand-content {
+    line-height: inherit;
+}
+
+.elementor-widget-king-addons-styled-text-builder .king-addons-styled-text-builder-items {
+    margin-bottom: 0;
+}
+
+/* Print styles */
+@media print {
+    .kng-collapse-expand-content {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    .kng-collapse-expand-content::after,
+    .kng-collapse-expand-button-wrapper {
+        display: none !important;
+    }
+}
