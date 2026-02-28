@@ -1,0 +1,92 @@
+.king-addons-styled-text {
+    word-wrap: normal;
+    word-break: break-word;
+}
+
+.king-addons-styled-text .king-addons-styled-text-inner * {
+    margin: 0;
+    padding: 0;
+    word-wrap: normal;
+    word-break: keep-all;
+}
+
+.king-addons-styled-text-gradient .king-addons-styled-text-inner {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.king-addons-styled-text img {
+    display: inline-block;
+}
+
+.king-addons-styled-text-underline-gradient .king-addons-styled-text-inner {
+    position: relative;
+    transition: all 0.25s ease-in;
+}
+
+/* Spoiler / Thanos effect (Pro) */
+.king-addons-styled-text--spoiler .king-addons-styled-text-inner {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Spoiler text is masked: only a "spotlight" area is visible while hovering/scrubbing */
+.king-addons-styled-text--spoiler .king-addons-styled-text-inner > span {
+    visibility: visible;
+    -webkit-mask-image: radial-gradient(
+        circle var(--kng-spoiler-spot-r, 0px) at var(--kng-spoiler-spot-x, 0px) var(--kng-spoiler-spot-y, 0px),
+        #000 0%,
+        #000 65%,
+        transparent 100%
+    );
+    mask-image: radial-gradient(
+        circle var(--kng-spoiler-spot-r, 0px) at var(--kng-spoiler-spot-x, 0px) var(--kng-spoiler-spot-y, 0px),
+        #000 0%,
+        #000 65%,
+        transparent 100%
+    );
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+.king-addons-styled-text--spoiler .king-addons-styled-text-inner.is-revealed > span {
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+.king-addons-styled-text--spoiler .king-addons-spoiler-canvas {
+    position: absolute;
+    inset: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    pointer-events: none;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.25s ease;
+}
+
+.king-addons-styled-text--spoiler .king-addons-styled-text-inner.is-revealed .king-addons-spoiler-canvas {
+    opacity: 0;
+}
+
+/* Typing text (Pro) */
+.king-addons-styled-text--typing {
+    position: relative;
+}
+
+.king-addons-styled-text--typing .king-addons-styled-text__cursor {
+    display: inline-block;
+    margin-left: 2px;
+    animation: king-addons-typing-blink 1s steps(1, start) infinite;
+    font-weight: inherit;
+}
+
+@keyframes king-addons-typing-blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    50.01%, 100% {
+        opacity: 0;
+    }
+}

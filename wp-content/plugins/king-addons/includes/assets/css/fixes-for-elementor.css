@@ -1,0 +1,17 @@
+/*
+ * Fix: Missing style for widget spacing.
+ *
+ * Elementor adds spacing between widgets via the CSS variable `--kit-widget-spacing`
+ * (set by the active Site Kit / generated CSS). 
+ * Here is an existing issue, it should also has "--kit-widget-spacing: 0px" here:
+ *  .elementor-widget:not(:last-child).elementor-absolute, 
+ *  .elementor-widget:not(:last-child).elementor-widget__width-auto, 
+ *  .elementor-widget:not(:last-child).elementor-widget__width-initial {
+ *     margin-block-end: 0;
+ * }
+ */
+.elementor-widget:not(:last-child).elementor-absolute, 
+.elementor-widget:not(:last-child).elementor-widget__width-auto, 
+.elementor-widget:not(:last-child).elementor-widget__width-initial {
+    --kit-widget-spacing: 0px;
+}
